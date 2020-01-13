@@ -1,0 +1,238 @@
+﻿<Window x:Class="DolphinAnalyzer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Analiza parametryczna dalby cumowniczo-odbojowej" Height="450" Width="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        >
+    <Grid >
+        <TabControl HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="673" >
+            <TabItem Header="Wybór statku">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Rodzaj statku : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="TypeOfShip" HorizontalAlignment="Left" Margin="140,14,0,0" VerticalAlignment="Top" Width="126"   SelectedIndex="0" SelectionChanged="TypeOfShip_SelectionChanged" Initialized="TypeOfShip_Initialized" />
+                    <RadioButton x:Name="RadioButtonShip1" GroupName="shipGroup" Content="Wyporność DWT" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="True" Click="RadioButtonShip1_Click"/>
+                    <RadioButton x:Name="RadioButtonShip2" GroupName="shipGroup" Content="Nośność M" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Click="RadioButtonShip2_Click"/>
+                    <TextBox x:Name="ShipLabel" HorizontalAlignment="Left" Height="23" Margin="140,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="ShipLabel_TextChanged"/>
+                    <Image x:Name="ShipPhoto" HorizontalAlignment="Left" Height="305" Margin="308,35,0,0" VerticalAlignment="Top" Width="345" Source="images/Oil_Tanker.jpg" Stretch="Fill"/>
+                    <Label Content="Parametry wybranego statku" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Nośność : " HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Długość całkowita :" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Długość między pionami :" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Szerokość :" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Zanurzenie :" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top"/>
+                    <Label Content="M = " HorizontalAlignment="Left" Margin="164,129,0,0" VerticalAlignment="Top"/>
+                    <Label Content="DWT =" HorizontalAlignment="Left" Margin="150,155,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Lc =" HorizontalAlignment="Left" Margin="165,181,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Lpp =" HorizontalAlignment="Left" Margin="156,208,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Bc =" HorizontalAlignment="Left" Margin="165,236,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tc =" HorizontalAlignment="Left" Margin="165,262,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="DWTLabel" Content="" HorizontalAlignment="Left" Margin="197,129,0,0" VerticalAlignment="Top" Height="26" Width="68" />
+                    <Label x:Name="DLabel" Content=" " HorizontalAlignment="Left" Margin="197,155,0,0" VerticalAlignment="Top" Width="73"/>
+                    <Label x:Name="LCLabel" Content=" " HorizontalAlignment="Left" Margin="197,181,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="LPPLabel" Content=" " HorizontalAlignment="Left" Margin="197,208,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="BCLabel" Content=" " HorizontalAlignment="Left" Margin="197,236,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="TCLabel" Content=" " HorizontalAlignment="Left" Margin="197,262,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[t]" HorizontalAlignment="Left" Margin="270,129,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[t]" HorizontalAlignment="Left" Margin="270,155,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="270,181,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="270,208,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="270,236,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="270,262,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Wyporność :" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[t]" HorizontalAlignment="Left" Margin="245,55,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Współczynnik pełnotliwości kadłuba :" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top"/>
+                    <Label Content="δ =" HorizontalAlignment="Left" Margin="170,314,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="DELTALabel" Content=" " HorizontalAlignment="Left" Margin="197,314,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="270,314,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wybór gruntu">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Rodzaj gruntu :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Stopień zagęszczenia Id =" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="SoilChoice" HorizontalAlignment="Left" Margin="162,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="SoilChoice_SelectionChanged" Initialized="SoilChoice_Initialized"/>
+                    <TextBox x:Name="SoilDegree" HorizontalAlignment="Left" Height="23" Margin="162,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" TextChanged="SoilDegree_TextChanged"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="272,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Parametry wybranego gruntu :" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Kąt tarcia wewnętrznego :" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Kąt tarcia gruntu o ścianę :" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ciężar objętościowy gruntu nawodnionego :" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Porowatość gruntu :" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Gęstość właściwa szkieletu gruntowego :" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Gęstość objętościowa gruntu :" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Współczynnik odporu gruntu :" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Współczynnik gruntowy :" HorizontalAlignment="Left" Margin="15,306,0,0" VerticalAlignment="Top"/>
+                    <Label Content="ϕ =" HorizontalAlignment="Left" Margin="253,114,0,0" VerticalAlignment="Top"/>
+                    <Label Content="δ =" HorizontalAlignment="Left" Margin="253,140,0,0" VerticalAlignment="Top"/>
+                    <Label Content="ρs =" HorizontalAlignment="Left" Margin="249,218,0,0" VerticalAlignment="Top"/>
+                    <Label Content="ρ =" HorizontalAlignment="Left" Margin="254,244,0,0" VerticalAlignment="Top"/>
+                    <Label Content="n =" HorizontalAlignment="Left" Margin="255,192,0,0" VerticalAlignment="Top"/>
+                    <Label Content="γ' =" HorizontalAlignment="Left" Margin="252,166,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Kph =" HorizontalAlignment="Left" Margin="190,280,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="fg =" HorizontalAlignment="Left" Margin="200,306,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="[°]" HorizontalAlignment="Left" Margin="360,114,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[°]" HorizontalAlignment="Left" Margin="360,140,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[kN/m^3]" HorizontalAlignment="Left" Margin="360,166,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[t/m^3]" HorizontalAlignment="Left" Margin="360,218,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[t/m^3]" HorizontalAlignment="Left" Margin="360,244,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="360,192,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="326,280,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="[kN/m^3]" HorizontalAlignment="Left" Margin="326,306,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="FILabel" Content="Label" HorizontalAlignment="Left" Margin="282,114,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="DELTALabel1" Content="Label" HorizontalAlignment="Left" Margin="282,140,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="GAMMAPLabel" Content="Label" HorizontalAlignment="Left" Margin="282,166,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="NLabel" Content="Label" HorizontalAlignment="Left" Margin="282,192,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="ROSLabel" Content="Label" HorizontalAlignment="Left" Margin="283,218,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="ROLabel" Content="Label" HorizontalAlignment="Left" Margin="282,244,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="KPHLabel" Content="Label" HorizontalAlignment="Left" Margin="229,280,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="FGLabel" Content="Label" HorizontalAlignment="Left" Margin="229,306,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Parametry podejściowe">
+                <Grid Background="#FFE5E5E5">
+                    <Rectangle Fill="White" HorizontalAlignment="Left" Height="249" Margin="343,109,0,0" Stroke="Black" VerticalAlignment="Top" Width="310"/>
+                    <Label Content="Rezerwa głębokościowa :     Rt =" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Prędkość podejścia :             v =" HorizontalAlignment="Left" Margin="13,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Współczynnik mimośrodowości uderzenia statku :" HorizontalAlignment="Left" Margin="9,117,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="RadioButtonCe1" GroupName ="Ce" Content="L/4" HorizontalAlignment="Left" Margin="29,143,0,0" VerticalAlignment="Top" IsChecked ="True" Click="RadioButtonCe1_Click"/>
+                    <RadioButton x:Name="RadioButtonCe2" GroupName ="Ce" Content="L/3" HorizontalAlignment="Left" Margin="29,164,0,0" VerticalAlignment="Top" Click="RadioButtonCe2_Click"/>
+                    <RadioButton x:Name="RadioButtonCe3" GroupName ="Ce"  Content="L/2" HorizontalAlignment="Left" Margin="29,185,0,0" VerticalAlignment="Top" Click="RadioButtonCe3_Click"/>
+                    <Label Content="Współczynnik masy wody dołączonej :" HorizontalAlignment="Left" Margin="9,201,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="RadioButtonCm1" GroupName ="Cm" Content="wg PIANC (2002)" HorizontalAlignment="Left" Margin="29,232,0,0" VerticalAlignment="Top" IsChecked ="True" Click="RadioButtonCm1_Click"/>
+                    <RadioButton x:Name="RadioButtonCm2" GroupName ="Cm" Content="wg Uedy (1981)" HorizontalAlignment="Left" Margin="29,253,0,0" VerticalAlignment="Top" Click="RadioButtonCm2_Click"/>
+                    <RadioButton x:Name="RadioButtonCm3" GroupName ="Cm" Content="wg Vasco Costy (1964)" HorizontalAlignment="Left" Margin="29,274,0,0" VerticalAlignment="Top" Click="RadioButtonCm3_Click"/>
+                    <Label Content="Współczynnik podatności kadłuba :" HorizontalAlignment="Left" Margin="9,290,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="RadioButtonCs1" GroupName ="Cs" Content="Odbojnica podatna" HorizontalAlignment="Left" Margin="29,321,0,0" VerticalAlignment="Top" IsChecked ="True" Click="RadioButtonCs1_Click"/>
+                    <RadioButton x:Name="RadioButtonCs2" GroupName ="Cs" Content="Odbojnica niepodatna" HorizontalAlignment="Left" Margin="29,342,0,0" VerticalAlignment="Top" Click="RadioButtonCs2_Click"/>
+                    <Label Content="Ce =" HorizontalAlignment="Left" Margin="228,154,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Cm =" HorizontalAlignment="Left" Margin="228,243,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Cs =" HorizontalAlignment="Left" Margin="228,321,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="269,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m/s]" HorizontalAlignment="Left" Margin="269,41,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="DepthMargin" HorizontalAlignment="Left" Height="23" Margin="189,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="DepthMargin_TextChanged"/>
+                    <TextBox x:Name="Velocity" HorizontalAlignment="Left" Height="23" Margin="189,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="Velocity_TextChanged"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="301,154,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="301,243,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="301,321,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Kąt podejścia :                    αp =" HorizontalAlignment="Left" Margin="13,71,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="Angle" HorizontalAlignment="Left" Height="23" Margin="189,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="Angle_TextChanged"/>
+                    <Label Content="[°]" HorizontalAlignment="Left" Margin="269,71,0,0" VerticalAlignment="Top"/>
+                    <Image HorizontalAlignment="Left" Height="138" Margin="345,111,0,0" VerticalAlignment="Top" Width="307" Source="images/Ce.JPG"/>
+                    <Image HorizontalAlignment="Left" Height="104" Margin="345,253,0,0" VerticalAlignment="Top" Width="168" Source="images/Cm.JPG"/>
+                    <Image HorizontalAlignment="Left" Height="83" Margin="525,262,0,0" VerticalAlignment="Top" Width="124" Source="images/Cs.JPG" Stretch="UniformToFill"/>
+                    <Label Content="Promień bezwładności masy statku :     k =" HorizontalAlignment="Left" Margin="343,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Długość promienia wodzącego :           R =" HorizontalAlignment="Left" Margin="343,40,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="625,40,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="CELabel" Content="Label" HorizontalAlignment="Left" Margin="269,154,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="CMLabel" Content="Label" HorizontalAlignment="Left" Margin="269,244,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="CSLabel" Content="Label" HorizontalAlignment="Left" Margin="269,321,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="KLabel" Content="Label" HorizontalAlignment="Left" Margin="578,10,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="RLabel" Content="Label" HorizontalAlignment="Left" Margin="578,41,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Geometria">
+                <Grid Background="#FFE5E5E5">
+                    <Image HorizontalAlignment="Left" Height="348" Margin="10,10,0,0" VerticalAlignment="Top" Width="241" Source="images/dalba.jpg"/>
+                    <Label Content="Szerokość konstrukcji :" HorizontalAlignment="Left" Margin="256,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Wysokość oczepu :" HorizontalAlignment="Left" Margin="256,36,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Odległość oczepu od wody :" HorizontalAlignment="Left" Margin="256,62,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Głębokość dopuszczalna :" HorizontalAlignment="Left" Margin="256,88,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Wysokość siły P :" HorizontalAlignment="Left" Margin="256,114,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="543,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Hc =" HorizontalAlignment="Left" Margin="418,36,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Hd =" HorizontalAlignment="Left" Margin="417,62,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Hdop =" HorizontalAlignment="Left" Margin="403,88,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Hp =" HorizontalAlignment="Left" Margin="417,114,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="ConstructionWidth" HorizontalAlignment="Left" Height="23" Margin="458,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="ConstructionWidth_TextChanged"/>
+                    <TextBox x:Name="CapHeight" HorizontalAlignment="Left" Height="23" Margin="458,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="CapHeight_TextChanged"/>
+                    <TextBox x:Name="SpaceUnder" HorizontalAlignment="Left" Height="23" Margin="458,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" TextChanged="SpaceUnder_TextChanged"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="543,36,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="543,62,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="543,88,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="543,114,0,0" VerticalAlignment="Top"/>
+                    <Label Content="B =" HorizontalAlignment="Left" Margin="425,11,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Układ pali :" HorizontalAlignment="Left" Margin="261,226,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="Pionowo :" HorizontalAlignment="Left" Margin="261,309,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Poziomo :" HorizontalAlignment="Left" Margin="261,248,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ilość :" HorizontalAlignment="Left" Margin="326,248,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Odstęp :" HorizontalAlignment="Left" Margin="312,274,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ilość :" HorizontalAlignment="Left" Margin="326,309,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Odstęp :" HorizontalAlignment="Left" Margin="312,334,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="GetA" HorizontalAlignment="Left" Height="23" Margin="366,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" TextChanged="GetA_TextChanged"/>
+                    <TextBox x:Name="GetX" HorizontalAlignment="Left" Height="23" Margin="366,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" TextChanged="GetX_TextChanged"/>
+                    <TextBox x:Name="GetB" HorizontalAlignment="Left" Height="23" Margin="366,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" TextChanged="GetB_TextChanged"/>
+                    <TextBox x:Name="GetY" HorizontalAlignment="Left" Height="23" Margin="366,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" TextChanged="GetY_TextChanged"/>
+                    <Canvas Name="PilesDiagram"  Background="White"   Height="190" Margin="458,173,0,0"  Width="190"/>
+                    <Image Name="PilesDiagramImage"    Height="190" Margin="458,173,0,0"  Width="190" Source="images/axis.png"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="406,274,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="406,333,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="406,308,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="406,248,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="SteelChoice" HorizontalAlignment="Left" Margin="303,197,0,0" VerticalAlignment="Top" Width="70
+                              " Initialized="SteelChoice_Initialized" SelectionChanged="SteelChoice_SelectionChanged"/>
+                    <ComboBox x:Name="ProfileChoice" HorizontalAlignment="Left" Margin="303,173,0,0" VerticalAlignment="Top" Width="70" Initialized="ProfileChoice_Initialized" SelectionChanged="ProfileChoice_SelectionChanged" />
+                    <Label Content="Profil : " HorizontalAlignment="Left" Margin="256,173,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Stal : " HorizontalAlignment="Left" Margin="256,197,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Głębokość wbicia dalby :" HorizontalAlignment="Left" Margin="256,140,0,0" VerticalAlignment="Top"/>
+                    <Label Content="t0 =" HorizontalAlignment="Left" Margin="421,140,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="543,140,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="HDOPLabel" Content="Label" HorizontalAlignment="Left" Margin="458,88,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="HPLabel" Content="Label" HorizontalAlignment="Left" Margin="458,114,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="T0Label" Content="Label" HorizontalAlignment="Left" Margin="458,140,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wybór odbojnicy">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Ile % energii kinetycznej statku ma pochłonąć odbojnica :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="327,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="[%]" HorizontalAlignment="Left" Margin="447,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Rodzaj odbojnicy :" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Rodzaj materiału :" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="122,58,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="122,89,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button Content="Dobierz" HorizontalAlignment="Left" Margin="327,69,0,0" VerticalAlignment="Top" Width="120" Height="42"/>
+                    <Label Content="Warunki będzie najlepiej spełniała odbojnica :" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wybór pachoła">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Rodzaj pachoła cumowniczego :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="BollardChoice" HorizontalAlignment="Left" Margin="204,14,0,0" VerticalAlignment="Top" Width="120" SelectedIndex ="0" Initialized="BollardChoice_Initialized"  SelectionChanged="BollardChoice_SelectionChanged" />
+                    <Label Content="Nośność :                                Z =" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="BollardCapacityChoice" HorizontalAlignment="Left" Margin="204,45,0,0" VerticalAlignment="Top" Width="120" SelectedIndex ="0" Initialized="BollardCapacityChoice_Initialized"  SelectionChanged="BollardCapacityChoice_SelectionChanged"/>
+                    <Label Content="Wysokość pachoła :             Hb =" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="HBLabel" Content="Label" HorizontalAlignment="Left" Margin="204,84,0,0" VerticalAlignment="Top"/>
+                    <Label Content="[m]" HorizontalAlignment="Left" Margin="247,84,0,0" VerticalAlignment="Top"/>
+                    <Rectangle Fill="White" HorizontalAlignment="Left" Height="253" Margin="379,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="268"/>
+                    <Image x:Name="BollardImage" HorizontalAlignment="Left" Height="240" Margin="392,23,0,0" VerticalAlignment="Top" Width="248" Source="images/Tee.JPG" Stretch="Fill"/>
+                    <Button x:Name="SetBollard" Content="Wybierz pachoł" HorizontalAlignment="Left" Margin="204,129,0,0" VerticalAlignment="Top" Width="120" Click="SetBollard_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Wyniki" FontWeight="Bold" >
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Warunek stateczności przy funkcji odbojowej :" HorizontalAlignment="Left" Margin="11,45,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ew/Ep =" HorizontalAlignment="Left" Margin="66,76,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Współczynnik bezpieczeństwa Fb = " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="261,10,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <TextBox Name="GetSafetyCoefficient" HorizontalAlignment="Left" Height="23" Margin="210,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="GetSafetyCoefficient_TextChanged"   />
+                    <Label x:Name="_1condition" Content="Label" HorizontalAlignment="Left" Margin="123,76,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="170,76,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="221,76,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Warunek nośności przy funkcji cumowniczej :" HorizontalAlignment="Left" Margin="335,45,0,0" VerticalAlignment="Top"/>
+                    <Label Content="σ1/fy =" HorizontalAlignment="Left" Margin="390,76,0,0" VerticalAlignment="Top"/>
+                    <Label Content="σ2/fy =" HorizontalAlignment="Left" Margin="390,102,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="_2condition" Content="Label" HorizontalAlignment="Left" Margin="442,76,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label x:Name="_3condition" Content="Label" HorizontalAlignment="Left" Margin="442,102,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="494,76,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label Content="[-]" HorizontalAlignment="Left" Margin="494,102,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="545,76,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="545,102,0,0" VerticalAlignment="Top" Initialized="Label_Initialized"/>
+                    <Button Content="Wyniki" HorizontalAlignment="Left" Margin="230,268,0,0" VerticalAlignment="Top" Width="200" FontWeight="Normal" Click="Button_Click"/>
+                    <Label Content="Szczegółowe wyniki wszystkich parametrów :" HorizontalAlignment="Left" Margin="192,228,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="UpButton1" Content="▲" HorizontalAlignment="Left" Margin="243,11,0,0" VerticalAlignment="Top" Width="15" FontWeight="Normal" Height="13" FontSize="6" Click="UpButton1_Click" />
+                    <Button x:Name="DownButton1" Content="▼" HorizontalAlignment="Left" Margin="243,24,0,0" VerticalAlignment="Top" Width="15" FontWeight="Normal" Height="13" FontSize="6" Click="DownButton1_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

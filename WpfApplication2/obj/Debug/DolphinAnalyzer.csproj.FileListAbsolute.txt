@@ -1,0 +1,44 @@
+G:\Magisterka\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.exe.config
+G:\Magisterka\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.exe
+G:\Magisterka\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.pdb
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\MainWindow.g.cs
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\App.g.cs
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer_MarkupCompile.cache
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\MainWindow.baml
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.g.resources
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.Properties.Resources.resources
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.csproj.GenerateResource.Cache
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.exe
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.pdb
+G:\Magisterka\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.csprojResolveAssemblyReference.cache
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.exe.config
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.exe
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.pdb
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.csprojResolveAssemblyReference.cache
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\MainWindow.baml
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\MainWindow.g.cs
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\App.g.cs
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer_MarkupCompile.cache
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.g.resources
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.Properties.Resources.resources
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.csproj.GenerateResource.Cache
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.exe
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.pdb
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\ResultsWindow.baml
+C:\Users\Danny Ewing\Desktop\WpfApplication2\WpfApplication2\obj\Debug\ResultsWindow.g.cs
+H:\Magistera\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.exe.config
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.exe
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.pdb
+H:\Magistera\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.exe
+H:\Magistera\WpfApplication2\WpfApplication2\bin\Debug\DolphinAnalizer.pdb
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.csprojResolveAssemblyReference.cache
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\MainWindow.baml
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\ResultsWindow.baml
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\MainWindow.g.cs
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\ResultsWindow.g.cs
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\App.g.cs
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer_MarkupCompile.cache
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalizer.g.resources
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.Properties.Resources.resources
+H:\Magistera\WpfApplication2\WpfApplication2\obj\Debug\DolphinAnalyzer.csproj.GenerateResource.Cache
