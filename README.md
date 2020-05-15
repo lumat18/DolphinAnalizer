@@ -1,7 +1,7 @@
 # DolphinAnalizer
 ## Introduction
 The application enables the user to analyze and calculate the main parameters of the breasting dolphin structure.  
-Breasting dolphins are important harbor facilities, used in oil and gas terminals. The structure's function is to bear the forces of the berthing vessel.  
+[Breasting dolphins](https://en.wikipedia.org/wiki/Dolphin_(structure)) are important harbor facilities, used in oil and gas terminals. The structure's function is to bear the forces of the berthing vessel.  
 The program calculates the internal forces in the dolphin's pile system during the ship approach. Load from the mooring lines of the ship being pushed by the wind is analyzed too.  
 The calculation method uses several non-linear equations, which are solved with the algorithms implemented in C#.
 
